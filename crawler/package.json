@@ -1,0 +1,26 @@
+{
+  "name": "squads-crawler",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "deploy": "gcloud --project devkit-prod beta functions deploy crawler --runtime nodejs10 --trigger-resource post-fetched --trigger-event google.pubsub.topic.publish"
+  },
+  "engines": {
+    "node": "~10.15.0"
+  },
+  "dependencies": {
+    "@google-cloud/pubsub": "^2.7.0",
+    "got": "^14.3.0",
+    "languagedetect": "^2.0.0",
+    "metascraper": "^5.45.9",
+    "metascraper-date": "^5.45.9",
+    "metascraper-title": "^5.45.9",
+    "metascraper-url": "^5.45.9",
+    "read-time-estimate": "0.0.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^0.0.0"
+  }
+}
