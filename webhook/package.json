@@ -1,0 +1,17 @@
+{
+  "name": "squads-webhook",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "deploy": "gcloud --project devkit-prod beta functions deploy webhook --runtime nodejs10 --trigger-http --env-vars-file .env.yaml"
+  },
+  "engines": {
+    "node": "~10.15.0"
+  },
+  "devDependencies": {
+    "request": "^2.88.0"
+  },
+  "dependencies": {
+    "@google-cloud/pubsub": "^2.7.0"
+  }
+}
